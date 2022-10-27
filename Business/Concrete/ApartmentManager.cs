@@ -27,7 +27,12 @@ namespace Business.Concrete
 
         public IDataResult<List<Apartment>> GetAll()
         {
-            return new SuccessDataResult<List<Apartment>>(_apartmentDal.GetAll(),"Ürünler getirildi.");
+            return new SuccessDataResult<List<Apartment>>(_apartmentDal.GetAll(), "Daireler getirildi.");
+        }
+
+        public IDataResult<List<Apartment>> GetAllByFloor(int floorNum)
+        {
+            return new SuccessDataResult<List<Apartment>>(_apartmentDal.GetAll(a=>a.Floor==floorNum),"Daireler getirildi.");
         }
 
         public IDataResult<Apartment> GetById(int apartmentId)

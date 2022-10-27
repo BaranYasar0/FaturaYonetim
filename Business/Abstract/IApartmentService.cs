@@ -13,8 +13,7 @@ namespace Business.Abstract
         IDataResult<List<Apartment>> GetAll();
         IResult Add(Apartment apartment);
         IResult Update(Apartment apartment);
-
-
         IDataResult<Apartment> GetById(int apartmentId);
+        IDataResult<List<Apartment>> GetAllByFloor(int floorNum);
     }
 }
